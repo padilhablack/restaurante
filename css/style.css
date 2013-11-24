@@ -1,0 +1,705 @@
+//bodys
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #233b48;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    overflow-y:hidden;
+}
+
+.alertajs{
+
+    font-size: 11;
+    color: crimson;
+
+}
+
+#titulo{
+    position: absolute;
+    margin-top:50px;
+    margin-left: 100px;
+    font-size: 12.5px;
+    font-style: normal;
+    
+}
+
+#titulo a:link, a:visited {
+    text-decoration: none
+}
+#titulo a:hover {
+    text-decoration:#12fe8b;
+    color: #f00;
+}
+#titulo a:active {
+    text-decoration:#233b48;
+
+}
+
+#titulo h3{
+    color:#233b48;
+}
+
+
+
+
+#welcome{
+    position: absolute;
+    margin-top: 18px;
+    margin-left: 1136px;
+    color:#F6B300;
+
+
+}
+
+h1, h2, h3 {
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    font-family: 'Arvo', serif;
+    font-weight: normal;
+    color: #F6B300;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+p, ul, ol {
+    margin-top: 0;
+    line-height: 180%;
+}
+
+ul, ol {
+}
+
+a {
+    text-decoration: none;
+    color: #F6B300;
+}
+
+
+
+#geral{
+    background-color: #F1EDE4;
+    overflow-y:hidden;
+    overflow-x: hidden;
+}
+
+/* Menu */
+
+#menu-wrapper {
+
+    margin-left: 10px;
+    position: static;
+    height: 56px;
+    background: none repeat scroll 0% 0% rgb(35, 59, 72);
+    border-top: 1px solid rgb(61, 39, 41);
+    margin-left: -27px;
+
+}
+
+.logo{
+    position: absolute;
+    margin-top: -4px;
+    margin-left: 1016px;
+    width: 123px;
+    height: 77px;
+    border-radius: 10px;
+}
+.logo_start
+{
+    position: absolute;
+    width: 220px;
+    height: 175px;
+    margin-top: 335px;
+    margin-left: 571px;
+}
+
+#content{
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 180px;
+    border:1px #E7DFD7 solid;
+    width: 1020px;
+    height:560px;
+    overflow-x:auto;
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(239,244,240,1) 83%, rgba(239,239,239,1) 94%, rgba(216,225,231,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(83%,rgba(239,244,240,1)), color-stop(94%,rgba(239,239,239,1)), color-stop(100%,rgba(216,225,231,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,244,240,1) 83%,rgba(239,239,239,1) 94%,rgba(216,225,231,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,244,240,1) 83%,rgba(239,239,239,1) 94%,rgba(216,225,231,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,244,240,1) 83%,rgba(239,239,239,1) 94%,rgba(216,225,231,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(239,244,240,1) 83%,rgba(239,239,239,1) 94%,rgba(216,225,231,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d8e1e7',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+
+#menu {
+    margin-top: 5px;
+    width: 1000px;
+    height: 55px;
+    margin: 0px auto;
+    padding: 0px;
+    position: relative;
+}
+
+#menu > ul {
+    display:table;
+    margin: 0;
+    padding: 10px 0px 0px 0px;
+    list-style: none;
+    line-height: normal;
+}
+
+#menu > ul > li {
+    float: left;
+    display:table;    
+    border-right: 1px solid #543E40;
+}
+
+#menu > ul > li > a {
+    display: table;
+    letter-spacing: 1px;
+    margin: 0px 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Arvo', serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #FFFFFF;
+    border: none;
+    position: relative;
+
+}
+
+#menu > ul > li > a:hover {
+
+}
+
+
+
+#menu > ul > li > a > ul.submenu {
+    position: absolute;
+    top:36px;
+    left:0;
+    background: #F6BA00;
+    display: none;
+    width:110px;
+    -webkit-border-bottom-right-radius: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -moz-border-radius-bottomright: 20px;
+    -moz-border-radius-bottomleft: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+}
+
+#menu > a:active {
+    color:#F6B300;
+    text-decoration:underline;
+    background-color:#F6B300;
+}
+
+#menu > ul > li > a > ul.submenu > li {
+    position: relative;
+    display: table;
+    margin-top: 20px;
+    padding: 5px 10px;
+}
+
+#menu > ul > li > a:hover ul.submenu{
+    display: block;
+}
+
+
+
+#menu a:hover, #menu .current_page_item a {
+    background: #F6BA00;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 520px;
+    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    text-decoration: none;
+    color: #3D2729;
+}
+
+#menu .current_page_item a {
+    background: #F6BA00;
+    border-radius: 8px;
+}
+
+
+
+
+/* Conteudo */
+
+#formCadastro{
+    margin-left:  50px;
+}
+
+#formCadastro fieldset ul{
+    margin-top: 40px;
+    right:400px; 
+    border: 1px solid #F2F3FF;
+    width: 1000px;
+    height: 300px;
+    postion:relative;
+}
+
+#formCadastro label{
+    float: left;
+}
+
+#list{
+    font-size: 12px;
+    alignment-adjust: 123px;
+}
+
+
+
+
+/* Footer */
+
+#footer {
+    position: absolute;
+    height: px;
+
+    alignment-adjust:central;
+
+
+    padding: 0px 0 11px 0;
+    background: #F1EDE4;
+    border-top: 5px solid #E7DFD7;
+    font-family: 'Arvo', serif;
+    width: 1392px;
+    margin-top: 560px;
+    margin-left: -3px;
+
+}
+
+#footer p {
+    margin: 0;
+    padding-top: 20px;
+    line-height: normal;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #A0A0A0;
+
+}
+
+#footer a {
+    color: #8A8A8A;
+}
+
+#banner {
+    width: 1000px;
+    margin: 0px auto;
+}
+
+#banner img
+{
+    border-radius: 8px;
+}
+//pagina logim
+*{
+    margin: 0;
+    padding:0;
+    outline:none; 
+    list-style: none;
+}
+#erro{
+    font: 50px;
+    font-family: sans-serif;
+    border:none;
+    background-color: coral;
+    width: 290px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 60px;
+    position: relative;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius:6px;
+
+}
+
+#menu_opcao{
+    background-color: #09f;
+    width: 300px;
+    height: 100px;
+}
+
+#sucesso{
+    font: 50px;
+    font-family: sans-serif;
+    border:none;
+    background-color: #aee1b7;
+    width: 180px;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 60px;
+    position: relative;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius:6px;
+}
+
+
+.logo_nome{
+    color: #F2F3FF;
+    margin-top: 600px;
+    margin: -56px auto;
+    position: relative;
+    top: 466px;
+    margin-left: 540px;
+    font-family: sans-serif;
+    font-size: large;
+    margin-left:580px;
+}
+
+.image_aluno{
+
+    height: 300px;
+    position: absolute;
+    margin-top: 175px;
+    margin-left: 566px;
+}
+
+.image_inicio{
+    width: 410px;
+    height: 301px;
+    margin-top: 200px;
+    position: absolute;
+}
+
+.image_mensagem{
+    width: 539px;
+    height: 237px;
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 400px;
+}
+
+#login{
+    width: 294px;
+    height: 250px;
+    margin: -56px auto;
+    position: relative;
+    top: 91px;
+    border: 1px solid #b8d4d6;
+    padding-bottom: 10px;
+    border-radius: 10px/20px;
+    -moz-border-radius: 10px/20px;
+    -webkit-border-radius: 10px/20px;
+    background: #a7c7dc; /* Old browsers */
+    background: -moz-linear-gradient(top, #a7c7dc 0%, #85b2d3 64%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7c7dc), color-stop(64%,#85b2d3)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #a7c7dc 0%,#85b2d3 64%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #a7c7dc 0%,#85b2d3 64%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #a7c7dc 0%,#85b2d3 64%); /* IE10+ */
+    background: linear-gradient(to bottom, #a7c7dc 0%,#85b2d3 64%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7c7dc', endColorstr='#85b2d3',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+#login label{
+    display:block;
+    padding: 5px 000;
+}
+.usarform{
+    margin-top: 32px;
+    margin-left:20px;
+
+
+}
+
+.txt{
+    border:none;
+    height: 40px;
+    width:250px;
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+}
+
+
+.txt:focus{
+    border:thin solid #09f;
+    box-shadow: 0 2px 16px#09f;
+    -webkit-box-shadow: 0 2px 16px#09f;
+    -moz-box-shadow: 0 2px 16px#09f;
+}
+
+.sb{
+
+    border:none;
+    width:250px;
+    height: 40px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius:6px;
+    margin-top: 10px;
+    font:100 px;
+    cursor: pointer;
+    background-color: #92d9f44;
+}
+
+.submit{
+
+    border:none;
+    width:250px;
+    height: 40px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius:6px;
+    margin-top: 10px;
+    font:100 px;
+    cursor: pointer;
+    background-color: #12fe8b;
+}
+
+
+
+
+
+// classes de herança
+.bradius{ 
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius:6px;
+
+}
+
+.fleft{
+    float:left;
+}
+.frigth{
+    float:right;
+}
+
+.submit:hover{
+    background:#fdb34b;
+}
+.sb,.usarform form input[type=password],.usarform form input[type=text] {
+    background:#F2F3FF;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius:6px;
+
+}
+
+//avisos de redirencionamentos
+
+
+
+//formulario de Cadastro
+
+.form-label{
+    width:150px !important;
+
+}
+.form-label-left{
+
+    width:150px !important;
+
+}
+.form-line{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.form-label-right{
+    width:150px !important;
+}
+.form-all{
+    margin-top: 0 auto;
+    margin-left: 250px;
+    height: 515px;
+    width: 450px;
+    background: none repeat scroll 0% 0% rgb(201, 226, 242);
+    font-family: 'Verdana';
+    font-size: 11px;
+    border-radius: 25px;
+    background: #92d9f4; /* Old browsers */
+    background: -moz-linear-gradient(top, #92d9f4 1%, #cbe3ed 47%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#92d9f4), color-stop(47%,#cbe3ed)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #92d9f4 1%,#cbe3ed 47%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #92d9f4 1%,#cbe3ed 47%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #92d9f4 1%,#cbe3ed 47%); /* IE10+ */
+    background: linear-gradient(to bottom, #92d9f4 1%,#cbe3ed 47%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#92d9f4', endColorstr='#cbe3ed',GradientType=0 ); /* IE6-9 */
+
+}
+.form-radio-item label, .form-checkbox-item label, .form-grading-label, .form-header{
+    color:Black;
+}
+
+.form-section{
+    margin-top: 0px;
+    line-height: 70%;
+    margin-left: 30px;
+    font-size: 14px;
+
+}
+
+
+
+//formulario mensagem
+
+.form-label-mensagem{
+    width:150px !important;
+}
+.form-label-left-mensagem{
+    width:150px !important;
+}
+.form-line-mensagem{
+    padding-top:9px;
+    padding-bottom:12px;
+    font-family: fantasy;
+}
+.form-label-right{
+    width:150px !important;
+}
+.form-mensagem {
+    margin-left: 80;
+    width: 376px;
+    color: rgb(85, 85, 85) !important;
+    font-family: 'Lucida Grande';
+    font-size: 17px;
+    margin-top: 20;
+    height: 500px; 
+    background-color: #92d9f4;
+    border-radius: 20px;
+    background: rgb(240,249,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(240,249,255,1) 47%, rgba(119,170,109,1) 84%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(47%,rgba(240,249,255,1)), color-stop(84%,rgba(119,170,109,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(240,249,255,1) 47%,rgba(119,170,109,1) 84%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(240,249,255,1) 47%,rgba(119,170,109,1) 84%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(240,249,255,1) 47%,rgba(119,170,109,1) 84%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(240,249,255,1) 47%,rgba(119,170,109,1) 84%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#77aa6d',GradientType=0 ); /* IE6-9 */
+    border: solid #A0A0A0 2px;
+
+}
+.form-section-mensagem {
+    margin-top: 25px; 
+    line-height: 150%;
+    font-size: 14px;
+    margin-left: 30px;
+}
+
+.form-section-mensagem h2 {
+    font-size: 1.4em;
+}
+
+#mensagem{
+    position: absolute;
+    margin-top: -2;
+    width: 1019px;
+    height: 560px;
+   
+}
+
+//animações
+
+
+#mensagem {
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count:2;
+    animation-direction: alternate;
+}
+
+
+
+#login {
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count:2;
+    animation-direction: alternate;
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 50%;
+        width: 30%
+
+
+    }
+
+    to {
+        margin-left: 35%;
+        width: 13%;
+        background-color:#234234;
+    }
+} 
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+}
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
