@@ -2,6 +2,8 @@
 protegerArquivo(basename(__FILE__));
 @$sessao = new sessao;
 if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
+    
+
     if (isset($_GET['ra'])):
         $ra = $_GET['ra'];
         if (isset($_POST['excluir'])):
@@ -53,9 +55,9 @@ if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
                 <li><label for="email">Email:</label></li>
                 <li><input disabled="disabled" id="email"type="text" name="email" size="25"value=" <?php if ($resbd) echo $resbd->email ?>"/></li>
                 <li><label for="ativo">Ativo:</label></li>
-                <li><input disabled="disabled"type="checkbox" name="ativo" <?php if ($resbd->ativo == 's'): echo "checked='checked'"; else : echo "";endif; ?>/> <li>
+                <li><input disabled="disabled"type="checkbox" name="ativo" <?php if ($resbd->ativo == 's') echo "checked='checked'";  ?>/> <li>
                 <li><label for="admin">Administrador:</label></li>
-                <li><input disabled="disabled" type="checkbox" name="admin" <?php if ($resbd->admin == 's'): echo "checked='checked'"; else : echo "";endif; ?>/><li>             
+                <li><input disabled="disabled" type="checkbox" name="admin" <?php if ($resbd->admin == 's') echo "checked='checked'"; ?>/><li>             
 
                 <li class="center"><input type="button" onclick="location.href = '?m=usuarios&t=alunos'" value="Sair"/>
                     <input type="submit" name="excluir" value="Excluir registro" /></li>
@@ -63,6 +65,7 @@ if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
         </fieldset>
     </form>
     <?php
+    
 else:
     exibirMensagem('Voce não tem permissão para acessar a pagina<a href="#" onclick="history.back()">Voltar</a>', 'erro');
  endif;

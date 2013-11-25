@@ -64,7 +64,7 @@ switch ($tela):
 
     case 'departamentos':
         ?>
-
+        <img class="image_aluno" src="images/campo.png" />
         <label id="titulo"><a href="?m=usuarios&t=padaria"><h3 >Padaria</h3></a></label></br>
         </br>
         <label id="titulo"><a href="?m=usuarios&t=restaurante"><h3>Restaurante</h3></a></label></br>
