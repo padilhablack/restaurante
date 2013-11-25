@@ -24,7 +24,7 @@
     <table class="usuarios" id="list" cellpading="0" cellspacing="0"> 
         <thead>
             <tr>
-                <th>RA</th><th>Nome</th><th>Data</th><th>Adicionar</th>
+                <th>RA</th><th>Nome</th><th>Data</th><th>Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -37,9 +37,8 @@
                 printf('<td class="center">%s</td>', $res->alunos);
                 printf('<td class="center">%s</td>', $res->nome);
                 printf('<td class="center">%s</td>', date("d/m/y", strtotime($res->data)));
-                printf('<td class="center"><a  href="?m=usuarios&t=deleterodizio&ra=%s" " title="Adicionar ao rodízio"><img src="images/delete"/></a> ', $res->id, $res->id,$res->id
+                printf('<td class="center"><a  href="?m=usuarios&t=deleterodizio&ra=%s" " title="Adicionar ao rodízio"><img src="images/delete"/></a> ',$res->alunos
                 );
-
                 echo '</tr>';
             endwhile;
             ?> 

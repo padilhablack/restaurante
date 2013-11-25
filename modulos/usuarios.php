@@ -19,7 +19,7 @@ switch ($tela):
     case 'inicio':
         ?>
 
-<div class="rotateIn"><img src="images/logo.png" class="image_inicio"/></div>
+        <div class="rotateIn"><img src="images/logo.png" class="image_inicio"/></div>
 
 
         <?php
@@ -35,16 +35,12 @@ switch ($tela):
         <?php
         break;
 // fim alunos
-
-
     case 'cadastro': // cadastro com formulario
-
         include 'classes/cadastro.php';
         break;
 // fim cadastro 
 
     case 'listar':
-        echo 'Alunos Cadastrados<br/>';
         include 'classes/listar.php';
         break;
 
@@ -81,10 +77,9 @@ switch ($tela):
     case 'rodizios':
         ?>
 
-
-        <a href="?m=usuarios&t=listaatual"><?php echo 'lista atual' ?></a>
-        <a href="?m=usuarios&t=novalista">nova lista</a>
-
+        <label id="titulo"><a href="?m=usuarios&t=listaatual"><h3>Lista Atual</h3></a></label></br></br>
+        <label id="titulo"><a href="?m=usuarios&t=novalista"><h3>Nova Lista</h3></a></label>
+ 
         <?php
         break;
 
@@ -96,8 +91,11 @@ switch ($tela):
     case 'addrodizio':
         include_once 'classes/rodizio.php';
         include 'classes/AddRodizio.php';
-        ;
+        
         break;
+    
+    case'deleterodizio':
+        include 'classes/exRodizio.php';
         ?>
 
     <?php

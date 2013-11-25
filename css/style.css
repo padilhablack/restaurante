@@ -28,7 +28,7 @@ body {
     margin-left: 100px;
     font-size: 12.5px;
     font-style: normal;
-    
+
 }
 
 #titulo a:link, a:visited {
@@ -260,10 +260,10 @@ a {
 }
 
 #formCadastro fieldset ul{
-    margin-top: 40px;
+    margin-top: 70px;
     right:400px; 
     border: 1px solid #F2F3FF;
-    width: 1000px;
+    width: 500px;
     height: 300px;
     postion:relative;
 }
@@ -331,22 +331,72 @@ a {
     outline:none; 
     list-style: none;
 }
-#erro{
-    font: 50px;
-    font-family: sans-serif;
+.alerta{
+    font: 20px;
+    font-family:monospace;
+    font-size:large;
+    margin-left: 10px;
     border:none;
-    background-color: coral;
-    width: 290px;
-    height: 30px;
-    margin-top: 20px;
-    margin-left: 60px;
-    position: relative;
+    height: 60px;
+    background-color:#ffe500;;
+    position: absolute;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius:6px;
 
 }
+.alerta a{
+    color:#233b48;
+}
 
+.alerta a:hover{
+    color: #09f;
+}
+
+
+.erro{
+    font: 20px;
+    font-family:monospace;
+    font-size:large;
+    margin-left: 10px;
+    border:none;
+    background-color:#ffbb77;
+    height: 60px;
+    position: absolute;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius:6px;
+
+}
+.erro a{
+    color:#A0A0A0;
+}
+
+.erro a:hover{
+   color:#F6BA00;
+}
+
+.sucesso{
+    font: 20px;
+    font-family:monospace;
+    font-size:large;
+    margin-left: 10px;
+    border:none;
+    height: 60px;
+    background-color:#c1f7eb;
+    position: absolute;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius:6px;
+
+}
+.sucesso a{
+    color: #233b48;
+}
+
+.sucesso a:hover{
+   color:#F6BA00;
+}
 #menu_opcao{
     background-color: #09f;
     width: 300px;
@@ -536,13 +586,13 @@ a {
     width:150px !important;
 }
 .form-all{
-    margin-top: 0 auto;
+    margin-top: 3px;
     margin-left: 250px;
-    height: 515px;
+    height: 550px;
     width: 450px;
     background: none repeat scroll 0% 0% rgb(201, 226, 242);
     font-family: 'Verdana';
-    font-size: 11px;
+    font-size: 10px;
     border-radius: 25px;
     background: #92d9f4; /* Old browsers */
     background: -moz-linear-gradient(top, #92d9f4 1%, #cbe3ed 47%); /* FF3.6+ */
@@ -621,7 +671,7 @@ a {
     margin-top: -2;
     width: 1019px;
     height: 560px;
-   
+
 }
 
 //animações
@@ -659,47 +709,47 @@ a {
 } 
 
 .rotateIn {
-  -webkit-animation-name: rotateIn;
-  animation-name: rotateIn;
+    -webkit-animation-name: rotateIn;
+    animation-name: rotateIn;
 }
 
 @-webkit-keyframes rotateIn {
-  0% {
-    -webkit-transform-origin: left bottom;
-    transform-origin: left bottom;
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    opacity: 0;
-  }
+    0% {
+        -webkit-transform-origin: left bottom;
+        transform-origin: left bottom;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        opacity: 0;
+    }
 
-  100% {
-    -webkit-transform-origin: left bottom;
-    transform-origin: left bottom;
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-    opacity: 1;
-  }
+    100% {
+        -webkit-transform-origin: left bottom;
+        transform-origin: left bottom;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+        opacity: 1;
+    }
 }
 
 @keyframes rotateIn {
-  0% {
-    -webkit-transform-origin: left bottom;
-    -ms-transform-origin: left bottom;
-    transform-origin: left bottom;
-    -webkit-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    opacity: 0;
-  }
+    0% {
+        -webkit-transform-origin: left bottom;
+        -ms-transform-origin: left bottom;
+        transform-origin: left bottom;
+        -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+        opacity: 0;
+    }
 
-  100% {
-    -webkit-transform-origin: left bottom;
-    -ms-transform-origin: left bottom;
-    transform-origin: left bottom;
-    -webkit-transform: rotate(0);
-    -ms-transform: rotate(0);
-    transform: rotate(0);
-    opacity: 1;
-  }
+    100% {
+        -webkit-transform-origin: left bottom;
+        -ms-transform-origin: left bottom;
+        transform-origin: left bottom;
+        -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+        transform: rotate(0);
+        opacity: 1;
+    }
 }
 

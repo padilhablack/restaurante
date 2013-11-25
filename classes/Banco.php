@@ -167,6 +167,7 @@ abstract class Banco {
             die($resultado);
         }
     }
+    
 
 }
 

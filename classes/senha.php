@@ -1,6 +1,5 @@
 <?php
     protegerArquivo(basename(__FILE__));
-  echo 'Alteração de senha';
         @$sessao = new sessao;
         if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
             if (isset($_GET['ra'])):
@@ -13,10 +12,10 @@
                     $user->valorpk = $ra;
                     $user->atualizar($user);
                     if ($user->linhasAfetadas == 1):
-                        exibirMensagem('Senha alterada com sucesso.<a href="?m=usuarios&t=pesquisa">Exibir Cadastros</a>', 'sucesso');
+                        exibirMensagem('</br>Senha alterada com sucesso.</br><a href="?m=usuarios&t=lista">Exibir Cadastros</a>', 'sucesso');
                         unset($_POST);
                     else:
-                        exibirMensagem('Nenhum dado foi alterado .<a href="?m=usuarios&t=pesquisa">Exibir Cadastros</a>', 'alerta');
+                        exibirMensagem('</br>Nenhum dado foi alterado .</br><a href="?m=usuarios&t=lista">Exibir Cadastros</a>', 'alerta');
                     endif;
 
                 endif;
@@ -28,7 +27,7 @@
                 $resbd = $userbd->retornaDados();
 
             else:
-                exibirMensagem('Usuario nao definido!<a href="m=usuarios&t=pesquisa">Escolha um usuario para alterar</a>', 'erro');
+                exibirMensagem('</br>Usuario nao definido!<a href="m=usuarios&t=pesquisa">Escolha um usuario para alterar</a>', 'erro');
             endif;
             ?>  
             <script>
@@ -83,5 +82,5 @@
             </form>
             <?php
         else:
-            exibirMensagem('Voce não tem permissão para acessar a pagina<a href="#" onclick="history.back()">Voltar</a>', 'erro');
+            exibirMensagem('</br>Voce não tem permissão para acessar a pagina</br><a href="#" onclick="history.back()">Voltar</a>', 'erro');
         endif;

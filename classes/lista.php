@@ -1,12 +1,8 @@
-
-
-<form id="form rodizio">
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome"/>
-    <label for="nome">Data:</label>
-    <input type="datetime" name="data" value="<?php ?>"/>
-    <input type="submit" value="criar"/>
-</form>
+<?php
+protegerArquivo(basename(__FILE__));
+@$sessao = new sessao;
+if (isAdmin() == true):
+    ?>
 
     <script type="text/javascript" >
         $(document).ready(function() {
@@ -51,9 +47,14 @@
 
                 echo '</tr>';
             endwhile;
-            ?> 
-        </tbody>
-    </table>
+
+
+        else:
+            exibirMensagem('</br>Você não tem permissão para acessar a pagina.</br><a href="#" onclick="history.back()">Voltar</a>','erro');
+        endif;
+        ?> 
+    </tbody>
+</table>
 
 
 

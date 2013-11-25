@@ -17,7 +17,7 @@ class Rodizio extends Base {
             );
         else:$this->campos_valores = $campos;
         endif;
-        $this->campopk = 'id';
+        $this->campopk = 'alunos';
     }
     
 }

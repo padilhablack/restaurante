@@ -17,7 +17,7 @@ if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
           
             $rodizio->inserir($rodizio);
             if ($rodizio->linhasAfetadas == 1):
-                exibirMensagem('Aluno adicionado com sucesso.<a href="?m=usuarios&t=listaatual">Exibir Cadastros</a>');
+                exibirMensagem('Aluno adicionado com sucesso.<a href="?m=usuarios&t=listaatual">Exibir Cadastros</a>','sucesso');
                 unset($_POST);
             else:
                 exibirMensagem('Nenhum dado alterado.<a href="?m=usuarios&t=listaatual">Exibir Cadastros</a>', 'alerta');
@@ -41,7 +41,9 @@ if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
     </script> 
     <form id="formCadastro"action="" name="" method="post" >
         <fieldset>
-            <legend>Verifique os dados para a exlusão</legend>
+            <legend>
+                </br>
+                Verifique os dados para adicionar á lista de rodízio</legend>
             <ul>
                 <li><label  for="nome">Nome:</label></li>                  
                 <li><input disabled="disabled" id="nome" type="text" name="nome" size="25" value="<?php if ($resbd) echo $resbd->nome ?>" /></li>
@@ -58,9 +60,9 @@ if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
                 <li><label for="email">Email:</label></li>
                 <li><input disabled="disabled" id="email"type="text" name="email" size="25"value=" <?php if ($resbd) echo $resbd->email ?>"/></li>
                 <li><label for="ativo">Ativo:</label></li>
-                <li><input disabled="disabled"type="checkbox" name="ativo" <?php if ($resbd->ativo == 's'): echo "checked='checked'"; else : echo "";endif; ?>/> <li>
+                <li><input disabled="disabled"type="checkbox" name="ativo" <?php if ($resbd->ativo == 's') echo "checked='checked'"; ?>/> <li>
                 <li><label for="admin">Administrador:</label></li>
-                <li><input disabled="disabled" type="checkbox" name="admin" <?php if ($resbd->admin == 's'): echo "checked='checked'"; else : echo "";endif; ?>/><li>             
+                <li><input disabled="disabled" type="checkbox" name="admin" <?php if ($resbd->admin == 's') echo "checked='checked'"; ?>/><li>             
 
                 <li class="center"><input type="button" onclick="location.href = '?m=usuarios&t=alunos'" value="Sair"/>
                     <input type="submit" name="adicionar" value="Adicionar" /></li>

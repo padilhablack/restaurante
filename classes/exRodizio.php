@@ -1,6 +1,7 @@
 <?php
 protegerArquivo(basename(__FILE__));
 @$sessao = new sessao;
+include 'rodizio.php';
 if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
     
 
@@ -10,7 +11,7 @@ if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
             $admin = (isset($_POST['admin'])) ? $_POST['admin'] : "";
             $ativo = (isset($_POST['ativo'])) ? $_POST['ativo'] : "";
 
-            $user = new funcionario();
+            $user = new Rodizio();
             $user->valorpk = $ra;
             $user->deletar($user);
             if ($user->linhasAfetadas == 1):
@@ -59,7 +60,7 @@ if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
                 <li><label for="admin">Administrador:</label></li>
                 <li><input disabled="disabled" type="checkbox" name="admin" <?php if (@$resbd->admin == 's') echo "checked='checked'"; ?>/><li>             
 
-                <li class="center"><input type="button" onclick="location.href = '?m=usuarios&t=alunos'" value="Sair"/>
+                <li class="center"><input type="button" onclick="location.href = '?m=usuarios&t=rodizios'" value="Sair"/>
                     <input type="submit" name="excluir" value="Excluir registro" /></li>
             </ul>
         </fieldset>
@@ -67,5 +68,5 @@ if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
     <?php
     
 else:
-    exibirMensagem('</br>Voce não tem permissão para acessar a pagina</br><a href="#" onclick="history.back()">Voltar</a>', 'erro');
+    exibirMensagem('Voce não tem permissão para acessar a pagina<a href="#" onclick="history.back()">Voltar</a>', 'erro');
  endif;

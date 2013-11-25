@@ -1,8 +1,7 @@
 <?php
 require_once 'funcoes.php';
 protegerArquivo(basename(__FILE__));
-echo 'Cadastro de usuarios' . '</br>';
-
+if(isAdmin()):
 if (isset($_POST['cadastrar'])):
 
     //variaveis recebidas do post
@@ -17,6 +16,7 @@ if (isset($_POST['cadastrar'])):
     $setor = (isset($_POST['setor'])) ? $_POST['setor'] : " ";
     $email = (isset($_POST['email'])) ? $_POST['email'] : " ";
     $senha = (isset($_POST['senha'])) ? $_POST['senha'] : " ";
+   
 
     // array de funcionaio do banco
 
@@ -30,7 +30,7 @@ if (isset($_POST['cadastrar'])):
         'setor' => $setor,
         'ramal' => $ramal,
         'email' => $email,
-        'senha' => codificasenha($senha)
+        'senha' => codificasenha($senha), 
     ));
 
     // validações
@@ -38,12 +38,12 @@ if (isset($_POST['cadastrar'])):
 
     $duplicado = null;
     if ($user->existeRegistro('ra', $_POST['ra'])):
-        exibirMensagem('Este ra já esta cadastrado.', 'erro');
+        exibirMensagem('</br>Este ra já esta cadastrado.</br>','alerta');
         $duplicado = TRUE;
     endif;
 
     if ($user->existeRegistro('email', $_POST['email'])):
-        exibirMensagem('Este email já esta cadastrado.', 'erro');
+        exibirMensagem('Este email já esta cadastrado.</br>','alerta');
         $duplicado = TRUE;
     endif;
 
@@ -53,7 +53,7 @@ if (isset($_POST['cadastrar'])):
     if ($duplicado != TRUE):
         $user->inserir($user);
         if ($user->linhasAfetadas == 1):
-            exibirMensagem('Cadastro realizado com sucesso!  <a href="?m=usuarios&t=listar">Exibir Cadastros</a>', 'sucesso');
+            exibirMensagem('Cadastro realizado com sucesso!</br><a href="?m=usuarios&t=listar">Exibir Cadastros</a>', 'sucesso');
             unset($_POST);
         endif;
     endif;
@@ -214,14 +214,16 @@ endif;
                     E-mail:<span class="form-required">*</span>
                 </label>
                 <input type="text" class="" data-type="input-textbox"  name="email" size="20" value="" />
-
             </li>
+            
             <li class="form-line">
                 <label class="form-label-left" for="">
                     Senha:<span class="form-required">*</span>
                 </label>
                 <input type="password" class=" " data-type="input-textbox" id="input_35" name="senha" size="20" value="" />
             </li>
+           
+            
             <li>
                 <div class="form-input-wide">
                     <div style="margin-left:156px" class="form-buttons-wrapper">
@@ -236,4 +238,13 @@ endif;
             </li>
         </ul>
     </div>
-</form>      
+</form> 
+<?php
+else:
+
+    exibirMensagem('</br>Voce nao tem permissão de acessar essa página</br><a href="?m=usuarios&t=inicio">voltar</a>','erro');
+
+endif;
+
+
+?>
