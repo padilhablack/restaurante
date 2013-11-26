@@ -18,7 +18,7 @@ switch ($tela):
 
     case 'inicio':
         ?>
-
+        
         <div class="rotateIn"><img src="images/logo.png" class="image_inicio"/></div>
 
 
@@ -88,9 +88,9 @@ switch ($tela):
         break;
     case 'rodizios':
         ?>
-
+        <img src="images/fundo.png" style="width: 600; height: 300; position: absolute; margin-top: 250px; margin-left: 400px;" />
         <label id="titulo"><a href="?m=usuarios&t=listaatual"><h3>Lista Atual</h3></a></label></br></br>
-        <label id="titulo"><a href="?m=usuarios&t=novalista"><h3>Nova Lista</h3></a></label>
+        <label id="titulo"><a href="?m=usuarios&t=novalista"><h3>Adicionar á Lista</h3></a></label>
 
         <?php
         break;
@@ -120,6 +120,7 @@ switch ($tela):
     <?php
     case 'horario':
         ?>
+        <img src="images/relogio.png" style="width: 589; height: 423; position: absolute; margin-top: 50px; margin-left: 400px;" />
         <label id = "titulo"><a href = "?m=usuarios&t=marcahora"><h3>Marcar hora</h3></a></label></br></br>
         <label id = "titulo"><a href = "?m=usuarios&t=relatoriohoras"><h3>Relatório de horas</h3></a></label></br></br>
 
