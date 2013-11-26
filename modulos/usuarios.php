@@ -107,13 +107,19 @@ switch ($tela):
         ;
         break;
         ?>
-        <?php
+    <?php
     case 'horario':
-        
-        include_once 'classes/Listarhora.php';
         ?>
-        
+        <label id = "titulo"><a href = "?m=usuarios&t=marcahora"><h3>Marcar hora</h3></a></label></br></br>
+        <label id = "titulo"><a href = "?m=usuarios&t=relatoriohoras"><h3>Relatório de horas</h3></a></label></br></br>
+        <label id = "titulo"><a href = "?m=usuarios&t=horageral"><h3>Horário Geral</h3></a></label ></br>
         <?php
+            break;;
+    case 'marcahora':
+        include_once 'classes/MarcaHora.php';
+        
+        ?>
+        <?php 
         break;
     default :
         echo'<p> a tela solicitada não existe</p>';
