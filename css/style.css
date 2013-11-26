@@ -592,8 +592,8 @@ a {
  .form-all-hora{
     margin-top: 3px;
     margin-left: 250px;
-    height: 200px;
-    width: 450px;
+    height:220px;
+    width: 470px;
     background: none repeat scroll 0% 0% rgb(201, 226, 242);
     font-family: 'Verdana';
     font-size: 10px;
@@ -609,7 +609,7 @@ a {
 
 }
 
-.form-all .form-all-hora{
+.form-all{
     margin-top: 3px;
     margin-left: 250px;
     height: 550px;
