@@ -28,8 +28,10 @@ switch ($tela):
         ?>
         <div> 
             <label id="titulo"><a href="?m=usuarios&t=cadastro"><h3>Novo cadastro</h3></a></label></br>
-            </br> </br> </br>
+            </br> 
             <label id="titulo"><a href="?m=usuarios&t=listar"><h3>Alunos cadastrados</h3></a></label></b>
+        </br> </br>
+        <label id="titulo"><a href="?m=usuarios&t=horario"><h3>Horário</h3></a></label></b>
         </div>
         <img class="image_aluno" src="images/restaurante.png"/>
         <?php
@@ -79,7 +81,7 @@ switch ($tela):
 
         <label id="titulo"><a href="?m=usuarios&t=listaatual"><h3>Lista Atual</h3></a></label></br></br>
         <label id="titulo"><a href="?m=usuarios&t=novalista"><h3>Nova Lista</h3></a></label>
- 
+
         <?php
         break;
 
@@ -91,9 +93,9 @@ switch ($tela):
     case 'addrodizio':
         include_once 'classes/rodizio.php';
         include 'classes/AddRodizio.php';
-        
+
         break;
-    
+
     case'deleterodizio':
         include 'classes/exRodizio.php';
         ?>
@@ -105,6 +107,12 @@ switch ($tela):
         ;
         break;
         ?>
+        <?php
+    case 'horario':
+        
+        include_once 'classes/Listarhora.php';
+        ?>
+        
         <?php
         break;
     default :

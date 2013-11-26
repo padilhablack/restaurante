@@ -1,6 +1,7 @@
 <?php
 require_once './usuarios.php';
 require_once './rodizio.php';
+require './Horario.php';
 
 //$jonas = new funcionario();
 //$jonas->setValor('nome', 'Pedrao');
@@ -22,7 +23,26 @@ require_once './rodizio.php';
 //print_r($jonas);
 //echo '<pre>';
 
-    $novo = new Rodizio();
-    $novo->tabela = $nome;
-    
+   // $novo = new Rodizio();
+   /// $novo->tabela = $nome;
+
+$aluno = new funcionario();
+$aluno->setValor('ra','1234');
+$aluno->setValor('nome', 'Fernando Rocha');
+
+$hora = new Horario(array(
+    'hid'=> '2',
+    'r_a'=> '1234',
+    'hora1'=> '8',
+    'hora2'=> '12', 
+    'horageral' => '200',
+    'minutos'=>'00',
+    'minutos2'=>'00'
+));
+
+$aluno->inserir($aluno);
+$hora->inserir($hora);
+
+
+
 ?>

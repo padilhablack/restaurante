@@ -87,7 +87,7 @@ abstract class Banco {
         $sql = "select * from " . $objeto->tabela;
         if ($objeto->extras_select != null):
             $sql.= " " . $objeto->extras_select;
-            
+
         endif;
         return $this->executaSQL($sql);
     }
@@ -167,7 +167,12 @@ abstract class Banco {
             die($resultado);
         }
     }
-    
+
+    public function join($tabela1 = null, $tabela2 = null, $para=null) {
+        //select nome,ra,hora1,minutos),hora2, minutos2,horaGeral from funcionario inner join horas on horas.r_a=funcionario.ra;
+                        
+                
+    }
 
 }
 
