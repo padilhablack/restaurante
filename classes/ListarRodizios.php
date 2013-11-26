@@ -29,6 +29,7 @@
         </thead>
         <tbody>
             <?php
+            
             $user = new Rodizio();
             $user->seleciona($user);
 

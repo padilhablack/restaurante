@@ -26,44 +26,25 @@ include_once 'classes/Horario.php';
 <table class="usuarios" id="list" cellpading="0" cellspacing="0"> 
     <thead>
         <tr>
-            <th>RA</th><th>Nome</th><th>Data</th><th>Entrada</th><th>Saída</th><th>Diária</th><th>Status</th>
+            <th>RA</th><th>Nome</th><th>Data</th><th>Entrada</th><th>Saída</th><th>Diária</th>
         </tr>
     </thead>
     <tbody>
         <?php
-        $hora = new Horario();
-        $hora->seleciona($hora);
-        $reshora = $hora->retornaDados();
-
-        $user = new funcionario();
-        $user->seleciona($user);
-        $res = $user->retornaDados();
-        
-        $horageral = new Horario();
-        $horageral->seleciona($horageral);
-        $reshorageral = $horageral->retornaDados();
-
         $diarias = new HorasDiarias();
         $diarias->seleciona($diarias);
-        $resdiaria = $diarias->retornaDados();
-     
-         
-        
+        while ($resdiaria = $diarias->retornaDados()):
+            $resultdiaria = $resdiaria->saida - $resdiaria->entrada;
 
-        while ($res = $user->retornaDados() && $reshora = $hora->retornaDados() && $resdiaria = $diarias->retornaDados() ):
-            $resultdiaria = $reshora->entrada - $reshora->saida;
-            
             //condição da hora
-            
+
             echo '<tr>';
-            printf('<td class="center">%s</td>', $res->ra);
-            printf('<td class="center">%s</td>', $res->nome);
-            printf('<td class="center">%s</td>', date("d/m/y", strtotime($res->data)));
-            printf('<td class="center">%s</td>', $reshora->entrada);
-            printf('<td class="center">%s</td>', $reshora->saida);
-            printf('<td class="center">%s</td>', $resultdiaria);
-            printf('<td class="center"><a  href="?m=usuarios&t=deleterodizio&ra=%s" " title="Adicionar ao rodízio"><img src="images/delete"/></a> ', $res->alunos
-            );
+            printf('<td class="center">%s</td>', $resdiaria->ra);
+            printf('<td class="center">%s</td>', $resdiaria->nome);
+            printf('<td class="center">%s</td>', date("d/m/y", strtotime($resdiaria->data)));
+            printf('<td class="center">%s : %s</td>', $resdiaria->entrada, $resdiaria->minutos);
+            printf('<td class="center">%s : %s</td>', $resdiaria->saida, $resdiaria->minutos2);
+            printf('<td class="center">%s horas</td>', $resultdiaria);
             echo '</tr>';
         endwhile;
         ?> 

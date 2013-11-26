@@ -1,7 +1,7 @@
 <?php
     protegerArquivo(basename(__FILE__));
         @$sessao = new sessao;
-        if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
+        if (isAdmin() == true ):
             if (isset($_GET['ra'])):
                 $ra = $_GET['ra'];
                 if (isset($_POST['alterarsenha'])):

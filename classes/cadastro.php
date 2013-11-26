@@ -54,7 +54,7 @@ if (isAdmin()):
             'senha' => codificasenha($senha),
         ));
         $hora = new Horario(array(
-            'hid' => '3',
+            
             'r_a' => $ra,
             'hora1' => $horario1,
             'hora2' => $horario2,
@@ -79,8 +79,10 @@ if (isAdmin()):
 
         if ($duplicado != TRUE):
             $user->inserir($user);
+  
             $hora->inserir($hora);
-            if ($user->linhasAfetadas == 1 & $hora->linhasAfetadas == 1):
+  
+            if ($user->linhasAfetadas == 1):
                 exibirMensagem('Cadastro realizado com sucesso!</br><a href="?m=usuarios&t=listar">Exibir Cadastros</a>', 'sucesso');
                 unset($_POST);
             endif;

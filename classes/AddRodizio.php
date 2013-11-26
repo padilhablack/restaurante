@@ -8,16 +8,19 @@ if (isAdmin() == true || $sessao->getVar('ra') == $_GET['ra']):
             $admin = (isset($_POST['admin'])) ? $_POST['admin'] : "";
             $ativo = (isset($_POST['ativo'])) ? $_POST['ativo'] : "";
 
+            $ra = $_GET['ra'];
+            $userbd = new funcionario();
+            $userbd->extras_select = " WHERE ra=$ra";
+            $userbd->seleciona($userbd);
+            $resbd = $userbd->retornaDados();
             $rodizio = new Rodizio(array(
-             
-                'nome'=>'Novo', 
-                'data'=> '10/10/2013', 
-                'alunos'=> $ra
+                'nome'=> $resbd->nome,
+                'alunos' => $ra
             ));
-          
+
             $rodizio->inserir($rodizio);
             if ($rodizio->linhasAfetadas == 1):
-                exibirMensagem('Aluno adicionado com sucesso.<a href="?m=usuarios&t=listaatual">Exibir Cadastros</a>','sucesso');
+                exibirMensagem('Aluno adicionado com sucesso.<a href="?m=usuarios&t=listaatual">Exibir Cadastros</a>', 'sucesso');
                 unset($_POST);
             else:
                 exibirMensagem('Nenhum dado alterado.<a href="?m=usuarios&t=listaatual">Exibir Cadastros</a>', 'alerta');

@@ -70,6 +70,16 @@ switch ($tela):
         <label id="titulo"><a href="?m=usuarios&t=cozinha"><h3>Cozinha</h3></a></label></br>
         <?php
         break;
+
+    case 'padaria':
+        include_once 'classes/Padaria.php';
+        break;
+    case 'restaurante':
+        include_once 'classes/Restaurante.php';
+        break;
+    case 'cozinha':
+   include_once 'classes/Cozinha.php';
+        break;
     case 'mensagem':
         include 'pages/mensagem.php';
         ?>
@@ -112,14 +122,20 @@ switch ($tela):
         ?>
         <label id = "titulo"><a href = "?m=usuarios&t=marcahora"><h3>Marcar hora</h3></a></label></br></br>
         <label id = "titulo"><a href = "?m=usuarios&t=relatoriohoras"><h3>Relatório de horas</h3></a></label></br></br>
-        <label id = "titulo"><a href = "?m=usuarios&t=horageral"><h3>Horário Geral</h3></a></label ></br>
+
         <?php
-            break;;
+        break;
+        ;
     case 'marcahora':
         include_once 'classes/MarcaHora.php';
-        
+        break;
+    case 'relatoriohoras':
+        include_once 'classes/Listarhora.php';
+        break;
         ?>
-        <?php 
+
+
+        <?php
         break;
     default :
         echo'<p> a tela solicitada não existe</p>';

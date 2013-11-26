@@ -17,62 +17,63 @@ if (isAdmin()):
 
                 <div  style="margin-top: 10px; height: 50px; box-sizing: 3px; ">
 
-    <?php
-    if (isset($_POST['registrar'])):
-        $ra = $_POST['ra'] ? $_POST['ra'] : "";
-        $data = $_POST['data'] ? $_POST['data'] : "";
-        $entrada = $_POST['horario1'] ? $_POST['horario1'] : "";
-        $saida = $_POST['horario2'] ? $_POST['horario2'] : "";
-        $minutos = $_POST['minutos'] ? $_POST['minutos'] : "";
-        $minutos2 = $_POST['minutos2'] ? $_POST['minutos2'] : "";
+                    <?php
+                    if (isset($_POST['registrar'])):
+                        $ra = $_POST['ra'] ? $_POST['ra'] : "";
+                        $data = $_POST['data'] ? $_POST['data'] : "";
+                        $entrada = $_POST['horario1'] ? $_POST['horario1'] : "";
+                        $saida = $_POST['horario2'] ? $_POST['horario2'] : "";
+                        $minutos = $_POST['minutos'] ? $_POST['minutos'] : "";
+                        $minutos2 = $_POST['minutos2'] ? $_POST['minutos2'] : "";
 
-        $user = new funcionario();
-        $user->seleciona($user);
-
-
-        while ($res = $user->retornaDados()):
-            $result = null;
-            $nome = null;
-            $resultra = null;
-            if ($ra == $res->ra):
-                $result = TRUE;
-                $resultra = $res->ra;
-                $nome = $res->nome;
-                break;
-            else:
-                $result = FALSE;
-            endif;
-        endwhile;
-
-        if ($result != TRUE):
-            echo 'Aluno não encontrado!';
-
-        else:
-            echo 'Aluno: ' . $nome . '</br></br> RA: ' . $resultra;
-            $novo = new HorasDiarias(array(
-                'id' => $data,
-                'data' => $data,
-                'ra' => $ra,
-                'entrada' => $entrada,
-                'saida' => $saida,
-                'minutos' => $minutos,
-                'minutos2' => $minutos2,
-            ));
-
-            $novo->inserir($novo);
-            if ($novo->linhasAfetadas == 1):
-                echo '</br>Horas registradas com sucesso';
-            else:
-                echo'</br>Nenhum registro efetuado!';
-            endif;
-        endif;
+                        $user = new funcionario();
+                        $user->seleciona($user);
 
 
+                        while ($res = $user->retornaDados()):
+                            $result = null;
+                            $nome = null;
+                            $resultra = null;
+                            if ($ra == $res->ra):
+                                $result = TRUE;
+                                $resultra = $res->ra;
+                                $nome = $res->nome;
+                                break;
+                            else:
+                                $result = FALSE;
+                            endif;
+                        endwhile;
+
+                        if ($result != TRUE):
+                            echo 'Aluno não encontrado!';
+
+                        else:
+                            echo 'Aluno: ' . $nome . '</br></br> RA: ' . $resultra;
+                            $novo = new HorasDiarias(array(
+                                'id' => $data,
+                                'data' => $data,
+                                'ra' => $ra,
+                                'nome' => $nome,
+                                'entrada' => $entrada,
+                                'saida' => $saida,
+                                'minutos' => $minutos,
+                                'minutos2' => $minutos2,
+                            ));
+
+                            $novo->inserir($novo);
+                            if ($novo->linhasAfetadas == 1):
+                                echo '</br style="margin-left:50px;">Horas registradas com sucesso';
+                            else:
+                                echo'</br>Nenhum registro efetuado!';
+                            endif;
+                        endif;
 
 
 
-    endif;
-    ?>
+
+
+                    endif;
+                    ?>
 
                 </div>
                 <label class="form-label-top"  for="">
