@@ -54,12 +54,9 @@ if (isAdmin()):
             'senha' => codificasenha($senha),
         ));
         $hora = new Horario(array(
-            
             'r_a' => $ra,
             'hora1' => $horario1,
             'hora2' => $horario2,
-            'minutos' => '00',
-            'minutos2' => '00',
             'horaGeral' => $horageral
         ));
 
@@ -79,9 +76,9 @@ if (isAdmin()):
 
         if ($duplicado != TRUE):
             $user->inserir($user);
-  
+
             $hora->inserir($hora);
-  
+
             if ($user->linhasAfetadas == 1):
                 exibirMensagem('Cadastro realizado com sucesso!</br><a href="?m=usuarios&t=listar">Exibir Cadastros</a>', 'sucesso');
                 unset($_POST);
@@ -243,21 +240,21 @@ if (isAdmin()):
                         Horário<span class="form-required">*</span>
                     </label>
 
-                    <select class="" style="width:70px" id="input_43" name="horario1">
-                        <option value="8">8:00</option>
-                        <option value="9">9:00</option>
-                        <option value="10">10:00</option>
-                        <option value="11">11:00</option>
-                        <option value="12">12:00</option>                     
+                    <select class="" style="width:40px" id="input_43" name="horario1">
+                        <option value="8">8</option> 
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>                     
                     </select>
                     ás
-                    <select class="" style="width:70px" id="input_43" name="horario2">
-                        <option value="13">13:00</option>
-                        <option value="14">14:00</option>
-                        <option value="15">15:00</option>
-                        <option value="16">16:00</option>
-                        <option value="17">17:00</option>                     
-                    </select>
+                    <select class="" style="width:45px" id="input_43" name="horario2">
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>                     
+                    </select> 
 
                 </li>
 

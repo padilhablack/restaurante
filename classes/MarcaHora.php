@@ -54,10 +54,9 @@ if (isAdmin()):
                                 'data' => $data,
                                 'ra' => $ra,
                                 'nome' => $nome,
-                                'entrada' => $entrada,
-                                'saida' => $saida,
-                                'minutos' => $minutos,
-                                'minutos2' => $minutos2,
+                                'entrada' => $entrada.":".$minutos,
+                                'saida' => $saida.":".$minutos2
+                                
                             ));
 
                             $novo->inserir($novo);

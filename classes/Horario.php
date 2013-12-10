@@ -14,8 +14,7 @@ class Horario extends Base {
                 "hora1" => null,
                 "hora2" => null,
                 "horaGeral"=> null, 
-                "minutos"=> null,
-                "minutos2"=> null
+       
            
             );
         else:$this->campos_valores = $campos;

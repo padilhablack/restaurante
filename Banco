@@ -1,0 +1,138 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
+
+CREATE SCHEMA IF NOT EXISTS `Restaurante` DEFAULT CHARACTER SET latin1 ;
+USE `Restaurante` ;
+
+-- -----------------------------------------------------
+-- Table `Restaurante`.`funcionario`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `Restaurante`.`funcionario` (
+  `nome` VARCHAR(200) NULL DEFAULT NULL ,
+  `sobrenome` VARCHAR(200) NULL DEFAULT NULL ,
+  `telefone` VARCHAR(200) NULL DEFAULT NULL ,
+  `ra` VARCHAR(45) NOT NULL DEFAULT '' ,
+  `ramal` VARCHAR(200) NULL DEFAULT NULL ,
+  `bolsa` VARCHAR(200) NULL DEFAULT NULL ,
+  `setor` VARCHAR(45) NULL DEFAULT NULL ,
+  `curso` VARCHAR(200) NULL DEFAULT NULL ,
+  `email` VARCHAR(200) NULL DEFAULT NULL ,
+  `senha` VARCHAR(200) NULL DEFAULT NULL ,
+  `ativo` CHAR(1) NULL DEFAULT 's' ,
+  `admin` CHAR(1) NULL DEFAULT 'n' ,
+  `dataCad` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ,
+  PRIMARY KEY (`ra`) ,
+  UNIQUE INDEX `ra_UNIQUE` (`ra` ASC) ,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `Restaurante`.`horas`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `Restaurante`.`horas` (
+  `hId` INT(11) NOT NULL AUTO_INCREMENT ,
+  `r_a` VARCHAR(45) NOT NULL ,
+  `hora1` INT(11) NOT NULL ,
+  `hora2` INT(11) NOT NULL ,
+  `horaGeral` INT(5) NOT NULL ,
+  `minutos` INT(2) NOT NULL ,
+  `minutos2` INT(5) NOT NULL ,
+  PRIMARY KEY (`hId`) ,
+  INDEX `Hid` (`hId` ASC) ,
+  INDEX `r_a` (`r_a` ASC) )
+ENGINE = InnoDB
+AUTO_INCREMENT = 9
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `Restaurante`.`horas_diarias`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `Restaurante`.`horas_diarias` (
+  `id` VARCHAR(45) NOT NULL ,
+  `ra` VARCHAR(45) NOT NULL ,
+  `nome` VARCHAR(45) NOT NULL ,
+  `data` VARCHAR(45) NOT NULL ,
+  `entrada` INT(11) NOT NULL ,
+  `saida` INT(11) NOT NULL ,
+  `minutos` VARCHAR(4) NOT NULL ,
+  `minutos2` VARCHAR(4) NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `ra` (`ra` ASC) )
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `Restaurante`.`rodizio`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `Restaurante`.`rodizio` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `alunos` VARCHAR(45) NULL DEFAULT NULL ,
+  `nome` VARCHAR(45) NULL DEFAULT NULL ,
+  `data` VARCHAR(45) NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `alunos` (`alunos` ASC) ,
+  CONSTRAINT `alunos`
+    FOREIGN KEY (`alunos` )
+    REFERENCES `Restaurante`.`funcionario` (`ra` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 15
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `Restaurante`.`funcionario_has_horas`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `Restaurante`.`funcionario_has_horas` (
+  `funcionario_ra` VARCHAR(45) NOT NULL ,
+  `horas_hId` INT(11) NOT NULL ,
+  PRIMARY KEY (`funcionario_ra`, `horas_hId`) ,
+  INDEX `fk_funcionario_has_horas_horas1` (`horas_hId` ASC) ,
+  INDEX `fk_funcionario_has_horas_funcionario1` (`funcionario_ra` ASC) ,
+  CONSTRAINT `fk_funcionario_has_horas_funcionario1`
+    FOREIGN KEY (`funcionario_ra` )
+    REFERENCES `Restaurante`.`funcionario` (`ra` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_funcionario_has_horas_horas1`
+    FOREIGN KEY (`horas_hId` )
+    REFERENCES `Restaurante`.`horas` (`hId` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `Restaurante`.`horas_diarias_has_funcionario`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `Restaurante`.`horas_diarias_has_funcionario` (
+  `horas_diarias_id` VARCHAR(45) NOT NULL ,
+  `funcionario_ra` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`horas_diarias_id`, `funcionario_ra`) ,
+  INDEX `fk_horas_diarias_has_funcionario_funcionario1` (`funcionario_ra` ASC) ,
+  INDEX `fk_horas_diarias_has_funcionario_horas_diarias1` (`horas_diarias_id` ASC) ,
+  CONSTRAINT `fk_horas_diarias_has_funcionario_horas_diarias1`
+    FOREIGN KEY (`horas_diarias_id` )
+    REFERENCES `Restaurante`.`horas_diarias` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_horas_diarias_has_funcionario_funcionario1`
+    FOREIGN KEY (`funcionario_ra` )
+    REFERENCES `Restaurante`.`funcionario` (`ra` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = latin1;
+
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

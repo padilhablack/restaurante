@@ -110,12 +110,13 @@ a {
 
 #menu-wrapper {
 
-    margin-left: 10px;
-    position: static;
+
+    position: relative;
     height: 56px;
-    background: none repeat scroll 0% 0% rgb(35, 59, 72);
+    background:#14173a;
     border-top: 1px solid rgb(61, 39, 41);
-    margin-left: -27px;
+    width: 100%;
+  
 
 }
 
@@ -159,7 +160,7 @@ a {
 
 #menu {
     margin-top: 5px;
-    width: 1000px;
+    width: 98%;
     height: 55px;
     margin: 0px auto;
     padding: 0px;
@@ -775,5 +776,31 @@ a {
         transform: rotate(0);
         opacity: 1;
     }
+}
+
+.box { float: left; }
+#root { max-width: 1200px; margin: 0 auto; 
+overflow-y:hidden;
+    overflow-x: hidden;
+-webkit-overflow-y:hidden; 
+-webkit-overflow-x:hidden; 
+}
+
+
+
+/* Laptop/Tablet (1024px) */
+@media only screen and (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+/* Tablet Portrait (768px) */
+@media only screen and (min-width: 321px) and (max-width: 1024px) and (orientation: portrait) {
+}
+
+/* Phone Landscape (480px) */
+@media only screen and (min-width: 321px) and (max-width: 480px) and (orientation: landscape) {
+}
+
+/* Phone Portrait (320px) */
+@media only screen and (max-width: 320px) {
 }
 
