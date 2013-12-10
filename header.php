@@ -19,10 +19,10 @@ protegerArquivo(basename(__FILE__));
 
 
     <body id="root">
-        <div id='geral'>
+     
             <img class="logo" src="images/logo.png"/>
             <label id="welcome"><?php echo $_SESSION['nome']; ?></label>
-            <div id="menu-wrapper">
+            <div id="menu-wrapper" style="margin-left: 1">
 
                 <div id="menu">
                     <ul>
@@ -46,6 +46,6 @@ protegerArquivo(basename(__FILE__));
                 </div>
                 <!-- end #menu -->
             </div>
-        </div>
+        
     </body>
 </html>

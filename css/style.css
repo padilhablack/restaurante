@@ -60,7 +60,7 @@ body {
 }
 
 #formulario-hora{
-    
+
 }
 
 h1, h2, h3 {
@@ -114,9 +114,10 @@ a {
     position: relative;
     height: 56px;
     background:#14173a;
-    border-top: 1px solid rgb(61, 39, 41);
-    width: 100%;
-  
+    border-top: 1px solid rgb(61, 39, 41);    
+    left: -84px;
+    width: 114%;
+
 
 }
 
@@ -144,6 +145,7 @@ a {
     border:1px #E7DFD7 solid;
     width: 1020px;
     height:560px;
+    left: 10px;
     overflow-x:auto;
     background: rgb(255,255,255); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(239,244,240,1) 83%, rgba(239,239,239,1) 94%, rgba(216,225,231,1) 100%); /* FF3.6+ */
@@ -165,12 +167,13 @@ a {
     margin: 0px auto;
     padding: 0px;
     position: relative;
+    left: 130px;;
 }
 
 #menu > ul {
     display:table;
     margin: 0;
-    padding: 10px 0px 0px 0px;
+    padding: 10px 20px -45px 0px;
     list-style: none;
     line-height: normal;
 }
@@ -179,6 +182,8 @@ a {
     float: left;
     display:table;    
     border-right: 1px solid #543E40;
+     padding: 10px 0px 0px 40px;
+    
 }
 
 #menu > ul > li > a {
@@ -288,8 +293,9 @@ a {
 /* Footer */
 
 #footer {
-    position: absolute;
-    height: px;
+    position: relative;
+    height: 60px;
+    left: -85px;
 
     alignment-adjust:central;
 
@@ -378,7 +384,7 @@ a {
 }
 
 .erro a:hover{
-   color:#F6BA00;
+    color:#F6BA00;
 }
 
 .sucesso{
@@ -400,7 +406,7 @@ a {
 }
 
 .sucesso a:hover{
-   color:#F6BA00;
+    color:#F6BA00;
 }
 #menu_opcao{
     background-color: #09f;
@@ -590,7 +596,7 @@ a {
 .form-label-right{
     width:150px !important;
 }
- .form-all-hora{
+.form-all-hora{
     margin-top: 3px;
     margin-left: 250px;
     height:220px;
@@ -718,7 +724,7 @@ a {
     animation-direction: alternate;
 }
 
-@keyframes slidein {
+@-webkit-keyframes slidein {
     from {
         margin-left: 50%;
         width: 30%
@@ -735,6 +741,7 @@ a {
 
 .rotateIn {
     -webkit-animation-name: rotateIn;
+    -moz-animation-name:rotatein; 
     animation-name: rotateIn;
 }
 
@@ -780,10 +787,10 @@ a {
 
 .box { float: left; }
 #root { max-width: 1200px; margin: 0 auto; 
-overflow-y:hidden;
-    overflow-x: hidden;
--webkit-overflow-y:hidden; 
--webkit-overflow-x:hidden; 
+        overflow-y:hidden;
+        overflow-x: hidden;
+        -webkit-overflow-y:hidden; 
+        -webkit-overflow-x:hidden; 
 }
 
 
